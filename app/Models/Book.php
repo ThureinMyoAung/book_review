@@ -54,4 +54,7 @@ class Book extends Model
             $query->whereBetween('created_at', [$from, $to]);
         }
     }
-}
+} 
+
+
+   //git  return $query->having('reviews_count', '>=', '$minReviews');
