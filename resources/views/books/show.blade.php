@@ -11,11 +11,16 @@
         
           <x-star-rating :rating="$book->reviews_avg_rating"/>
         </div>
-        <span class="book-review-count text-sm text-gray-500">
+        <span class="book-reviews-count text-sm text-gray-500">
           {{ $book->reviews_count }} {{ Str::plural('review', $book->reviews_count) }}
         </span>
       </div>
     </div>
+  </div>
+
+  <div class="mb-4">
+    <a href="{{ route('book.reviews.create',$book) }}" class="reset-link">Add a review</a>
+  
   </div>
 
   <div>
@@ -29,7 +34,7 @@
                 
                 <x-star-rating :rating="$review->rating"/></div>
 
-              <div class="book-review-count">
+              <div class="book-reviews-count">
                 {{ $review->created_at->format('M j, Y') }}</div>
             </div>
             <p class="text-gray-700">{{ $review->review }}</p>
